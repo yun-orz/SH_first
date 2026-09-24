@@ -1,0 +1,51 @@
+{
+  "experiment": "DOE 光谱编码最小物理可行性验证",
+  "selected_wavelengths_nm": [
+    450.0,
+    500.0,
+    550.0,
+    600.0,
+    650.0
+  ],
+  "fairness": {
+    "same_aperture_mm": 2.0,
+    "same_sensor_pixel_pitch_um": 5.0,
+    "same_total_signal_photons": 20000,
+    "same_background_photons_per_pixel": 0.2,
+    "same_read_noise_e": 1.5,
+    "dual_channel_photon_split": [
+      0.5,
+      0.5
+    ],
+    "note": "双通道总信号光子与两个基线相同，但读取两幅图，因此承担两次背景与读出噪声。"
+  },
+  "metrics": {
+    "double_helix": {
+      "mean_offdiag_pearson": 0.061214389405651715,
+      "mean_offdiag_cosine": 0.23672769350252082,
+      "median_fisher": 36.51414517690265,
+      "median_crlb_std_nm": 0.1654891140760479,
+      "worst_crlb_std_nm": 0.24512840096192248
+    },
+    "single_helix": {
+      "mean_offdiag_pearson": 0.15470206878462872,
+      "mean_offdiag_cosine": 0.24510516697947932,
+      "median_fisher": 39.162765331483996,
+      "median_crlb_std_nm": 0.1597950510628796,
+      "worst_crlb_std_nm": 0.2500179554853404
+    },
+    "dual_single_helix": {
+      "mean_offdiag_pearson": 0.15535804396289415,
+      "mean_offdiag_cosine": 0.2470848935727754,
+      "median_fisher": 34.85690350329999,
+      "median_crlb_std_nm": 0.16937745300734505,
+      "worst_crlb_std_nm": 0.25181838675950907
+    }
+  },
+  "objective_judgement": "当前设计未显示优势：等总光子下双通道 Fisher 信息更低且相似度没有改善；应先优化 DOE，不建议直接加工。",
+  "limitations": [
+    "解析环带螺旋 DOE 仅为物理可运行初值，尚未针对可分辨性优化。",
+    "PSF 在固定裁剪窗口内按相同总探测光子归一化，本实验比较编码形状而非实际衍射效率。",
+    "Dual-SH 使用两幅同参数传感器观测；总像素读出数高于单通道，后续需补充等总像素比较。"
+  ]
+}

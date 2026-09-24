@@ -15,6 +15,8 @@ dh-spectral baseline --config configs/baseline.yaml --output outputs/baseline
 python -m unittest discover -s tests -v
 dh-spectral scene-sweep --config configs/baseline.yaml --output outputs/scene_sweep
 dh-spectral optimize-seed --config configs/baseline.yaml --output outputs/optimization
+dh-spectral validate-idea --config configs/baseline.yaml --output outputs/first_validation
+dh-spectral complementarity-sweep --config configs/baseline.yaml --output outputs/complementarity_sweep
 ```
 
 不安装包也可以运行：
@@ -36,6 +38,12 @@ python -m dh_spectral.cli baseline --config configs/baseline.yaml --output outpu
 `scene-sweep` 会生成交替波长点阵，扫描点间距和每点光子数，输出 `scene_sweep.csv` 与 `applicability_map.png`。热图正值表示双通道的波长 RMSE 更低；这是定位适用范围的第一版可复现实验，而不是预设双通道必然获胜。
 
 `optimize-seed` 对环带数与拓扑荷步进做可复现网格搜索，输出候选排名和推荐解析初值。它用于筛掉明显不合适的初值，不替代基于真实加工约束的连续相位优化。
+
+`validate-idea` 是第一阶段最小科学验证实验。在相同口径、波段、传感器参数、总信号光子和噪声模型下，比较单 DOE 双螺旋、单通道单螺旋和双通道单螺旋，输出五张主结果图、PSF 特征、相关矩阵、Fisher 信息、CRLB及不预设结论的客观判断。
+
+`complementarity-sweep` 是第二轮科学验证实验。它固定使用 `fair_photon`，扫描 90 个 Single Helix 候选和 4095 个无序双通道组合（含相同参数对照），分析普通冗余、镜像对齐冗余、光谱导数相似度与 Fisher/CRLB 的关系，并对代表组合执行 Monte Carlo 验证。候选 PSF 会缓存在输出目录的 `cache` 子目录中。
+
+指标定义和公平性口径详见 [docs/first_validation_protocol.md](docs/first_validation_protocol.md)。
 
 ## 重要解释
 

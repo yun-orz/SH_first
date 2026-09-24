@@ -1,0 +1,64 @@
+{
+  "pair_count": 4095,
+  "count_gain_over_double_helix": 985,
+  "count_gain_over_best_single": 0,
+  "best_pair": {
+    "pair_id": "z06_c2_s2_hm1__z06_c2_s2_hm1",
+    "channel_A_id": "z06_c2_s2_hm1",
+    "channel_A_zone_count": 6,
+    "channel_A_charge_start": 2,
+    "channel_A_charge_step": 2,
+    "channel_A_handedness": -1,
+    "channel_B_id": "z06_c2_s2_hm1",
+    "channel_B_zone_count": 6,
+    "channel_B_charge_start": 2,
+    "channel_B_charge_step": 2,
+    "channel_B_handedness": -1,
+    "channel_redundancy": 1.000000039085013,
+    "channel_pearson_redundancy": 1.0000000009771253,
+    "mirror_aligned_redundancy": 1.0000000009771253,
+    "spectral_derivative_similarity": 0.999999969709115,
+    "median_fisher": 44.626781928431164,
+    "median_crlb_nm": 0.14969324902962208,
+    "gain_DH": 1.2221779179609613,
+    "gain_SH": 0.846124988917667,
+    "delta_F_DH": 8.112636751528512,
+    "delta_F_SH": -8.1157590825797
+  },
+  "best_single": {
+    "candidate_id": "z06_c2_s2_hp1",
+    "zone_count": 6,
+    "charge_start": 2,
+    "charge_step": 2,
+    "handedness": 1,
+    "median_fisher": 52.742541011010864,
+    "median_crlb_nm": 0.13769541375563152,
+    "mean_adjacent_psf_similarity": 0.9678548574447632,
+    "max_adjacent_psf_similarity": 0.9894741177558899
+  },
+  "correlations": {
+    "mirror_redundancy_vs_gain_DH": {
+      "pearson_r": 0.044480485491754096,
+      "spearman_rho": 0.1308032117280728
+    },
+    "derivative_similarity_vs_gain_DH": {
+      "pearson_r": 0.006078382618360877,
+      "spearman_rho": 0.17579749271988945
+    },
+    "derivative_similarity_vs_gain_SH": {
+      "pearson_r": 0.006078382618360866,
+      "spearman_rho": 0.17579749271988945
+    }
+  },
+  "handedness_only": {
+    "pair_count": 45,
+    "mean_mirror_aligned_redundancy": 0.7473787160193335,
+    "mean_gain_DH": 0.8610586225995857,
+    "count_gain_over_double_helix": 16
+  },
+  "representative_pair_count": 9,
+  "candidate_count": 90,
+  "cache_hits": 90,
+  "comparison_mode": "fair_photon",
+  "total_photons": 20000
+}
