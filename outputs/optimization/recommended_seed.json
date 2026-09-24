@@ -1,0 +1,12 @@
+{
+  "recommended_seed": {
+    "zone_count": 8,
+    "single_charge_step": 1,
+    "score": 0.16598835897810338,
+    "median_dual_crlb_nm": 0.17015306858508383,
+    "p90_dual_crlb_nm": 0.24830701451844564,
+    "median_double_crlb_nm": 0.1654891140760479,
+    "p95_adjacent_correlation": 0.9886715406896722
+  },
+  "warning": "这里只搜索解析初值参数；送厂前仍需加入真实加工约束和制造误差。"
+}

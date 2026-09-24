@@ -1,0 +1,47 @@
+optics:
+  grid_size: 256
+  pupil_diameter_mm: 2.0
+  focal_length_mm: 50.0
+  sensor_distance_mm: 50.0
+  pixel_pitch_um: 5.0
+  design_wavelength_nm: 550.0
+  wavelengths_nm:
+    start: 400.0
+    stop: 700.0
+    step: 5.0
+
+doe:
+  material: fused_silica
+  zone_count: 8
+  single_charge_start: 0
+  single_charge_step: 1
+  double_charge_start: 1
+  double_charge_step: 2
+  phase_levels: 16
+  continuous_phase: false
+  aperture_fill: 0.92
+
+camera:
+  photons_total: 20000
+  background_photons_per_pixel: 0.2
+  read_noise_e: 1.5
+  bit_depth: 16
+  quantum_efficiency: 0.75
+  beamsplitter_transmission: 0.46
+  beamsplitter_reflection: 0.46
+  doe_efficiency: 0.75
+
+simulation:
+  crop_size: 65
+  monte_carlo_repeats: 20
+  seed: 20260924
+  test_wavelengths_nm: [432.0, 487.0, 542.0, 597.0, 652.0, 687.0]
+  comparison_mode: fair_photon
+
+scene:
+  canvas_size: 193
+  patch_size: 65
+  spacings_px: [16, 24, 32, 48]
+  photons_per_emitter: [200, 500, 1000, 5000, 20000]
+  repeats: 5
+  wavelengths_nm: [500.0, 600.0]
